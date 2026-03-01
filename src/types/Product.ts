@@ -3,8 +3,43 @@ export interface Product {
   title: string;
   description: string;
   price: number;
-  thumbnail: string;
-  category: string;
-  brand: string; // Added brand property
+  discountPercentage: number;
   rating: number;
+  stock: number;
+  brand: string;
+  category: string;
+  thumbnail: string;
+  images: string[];
+}
+
+export interface ProductsResponse {
+  products: Product[];
+  total: number;
+  skip: number;
+  limit: number;
+}
+
+export interface CartItem {
+  product: Product;
+  quantity: number;
+}
+
+export interface User {
+  id: number;
+  username: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  image: string;
+  token: string;
+}
+
+export interface LoginResponse {
+  id: number;
+  username: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  image: string;
+  token: string;
 }
