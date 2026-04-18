@@ -8,7 +8,12 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: '/', name: 'home', component: HomeView },
-    { path: '/product/:id', name: 'product', component: ProductView, props: true },
+    {
+      path: '/product/:id',
+      name: 'product',
+      component: ProductView,
+      props: (route) => ({ id: String(route.params.id) })
+    },
     { path: '/cart', name: 'cart', component: CartView },
     { path: '/login', name: 'login', component: LoginView },
   ],
